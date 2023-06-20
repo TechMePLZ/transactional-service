@@ -1,0 +1,23 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: transaction-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/slot_transactions
+    username: postgres
+    password: admin
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  rabbitmq:
+    port: 5672
+    host: localhost
+    username: guest
+    password: guest
+    listener:
+      direct:
+        default-requeue-rejected: true
